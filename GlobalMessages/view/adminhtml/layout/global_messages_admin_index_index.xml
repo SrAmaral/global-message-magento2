@@ -10,7 +10,8 @@
     <body>
         <referenceContainer name="content">
 <!--            <block class="Webjump\GlobalMessages\Block\Index" name="globalmessages_index" template="Webjump_GlobaMessages::index.phtml"/>-->
-            <block name="globalmessages_index" template="Webjump_GlobalMessages::index.phtml"/>
+<!--            <block name="globalmessages_index" template="Webjump_GlobalMessages::index.phtml"/>-->
+            <uiComponent name="globalmessage_form"/>
         </referenceContainer>
     </body>
 </page>

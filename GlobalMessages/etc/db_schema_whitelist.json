@@ -1,0 +1,15 @@
+{
+    "global_messages": {
+        "column": {
+            "entity_id": true,
+            "message": true,
+            "color_background": true,
+            "color_text": true,
+            "is_active": true,
+            "updated_at": true
+        },
+        "constraint": {
+            "PRIMARY": true
+        }
+    }
+}
