@@ -17,19 +17,32 @@
             <item name="namespace" xsi:type="string">globalmessages_form</item>
         </item>
         <item name="template" xsi:type="string">templates/form/collapsible</item>
+        <item name="buttons" xsi:type="array">
+            <item name="save" xsi:type="array">
+                <item name="name" xsi:type="string">save</item>
+                <item name="label" xsi:type="string" translate="true">Save</item>
+                <item name="class" xsi:type="string">primary</item>
+            </item>
+        </item>
     </argument>
     <dataSource name="globalmessages_form_data_source">
-        <argument name="dataProvider" xsi:type="configurableObject">
-            <argument name="class" xsi:type="string">Webjump\GlobalMessages\Model\DataProvider</argument>
-            <argument name="name" xsi:type="string">globalmessages_form_data_source</argument>
-            <argument name="primaryFieldName" xsi:type="string">entity_id</argument>
-            <argument name="requestFieldName" xsi:type="string">entity_id</argument>
-        </argument>
         <argument name="data" xsi:type="array">
             <item name="js_config" xsi:type="array">
                 <item name="component" xsi:type="string">Magento_Ui/js/form/provider</item>
             </item>
+            <!--            <item name="config" xsi:type="array">-->
+            <!--                <item name="submit_url" xsi:type="url" path="*/*/save"/>-->
+            <!--            </item>-->
         </argument>
+        <settings>
+            <submitUrl path="global_messages/index/save"/>
+        </settings>
+        <dataProvider class="Webjump\GlobalMessages\Model\DataProvider" name="globalmessages_form_data_source">
+            <settings>
+                <primaryFieldName>entity_id</primaryFieldName>
+                <requestFieldName>entity_id</requestFieldName>
+            </settings>
+        </dataProvider>
     </dataSource>
 
     <fieldset name="globalmessages_fieldset">
@@ -44,7 +57,7 @@
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
                     <item name="dataType" xsi:type="string">text</item>
-                    <item name="label" xsi:type="string" translate="true">Mensagem</item>
+                    <item name="label" xsi:type="string" translate="true">Message</item>
                     <item name="formElement" xsi:type="string">input</item>
                     <item name="source" xsi:type="string">globalmessages</item>
                     <item name="dataScope" xsi:type="string">message</item>
@@ -55,7 +68,7 @@
 <!--        <field name="color_background">-->
             <colorPicker name="color_background" class="Magento\Ui\Component\Form\Element\ColorPicker" component="Magento_Ui/js/form/element/color-picker">
                 <settings>
-                    <label translate="true">Color</label>
+                    <label translate="true">Color background</label>
                     <elementTmpl>ui/form/element/color-picker</elementTmpl>
                     <colorFormat>rgb</colorFormat>
                     <colorPickerMode>full</colorPickerMode>
@@ -68,7 +81,7 @@
 <!--        <field name="color_text">-->
             <colorPicker name="color_text" class="Magento\Ui\Component\Form\Element\ColorPicker" component="Magento_Ui/js/form/element/color-picker">
                 <settings>
-                    <label translate="true">Color</label>
+                    <label translate="true">Color text</label>
                     <elementTmpl>ui/form/element/color-picker</elementTmpl>
                     <colorFormat>rgb</colorFormat>
                     <colorPickerMode>full</colorPickerMode>
@@ -98,5 +111,13 @@
                 </checkbox>
             </formElements>
         </field>
+<!--        <settings>-->
+<!--            <buttons>-->
+<!--        <button name="save" class="Webjump\GlobalMessages\Block\Adminhtml\Edit\SaveButton"/>-->
+<!--            </buttons>-->
+<!--        </settings>-->
     </fieldset>
+<!--    <settings>-->
+<!--        <button class="Webjump\GlobalMessages\Block\Adminhtml\Edit\SaveButton" name="save"/>-->
+<!--    </settings>-->
 </form>

@@ -3,7 +3,7 @@
         xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
     <table name="global_messages" resource="default" engine="innodb"
         comment="Global Messages to appear on top of the site">
-        <column xsi:type="int" name="entity_id" unsigned="true" nullable="false" identity="false" default="0" comment="Entity ID"/>
+        <column xsi:type="int" name="entity_id" unsigned="true" nullable="false" identity="true" comment="Entity ID"/>
         <column xsi:type="text" name="message" nullable="true"/>
         <column xsi:type="varchar" name="color_background" nullable="true"/>
         <column xsi:type="varchar" name="color_text" nullable="true"/>
